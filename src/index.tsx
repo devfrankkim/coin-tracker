@@ -4,10 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import App from "./App";
-
-import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
-import ResetGlobalStyle from "./ResetGlobalStyle";
+import { RecoilRoot } from "recoil";
 
 const queryClient = new QueryClient();
 
@@ -16,11 +13,10 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider theme={theme}>
-      <ResetGlobalStyle />
+  <RecoilRoot>
+    <QueryClientProvider client={queryClient}>
       <App />
-    </ThemeProvider>
-    <ReactQueryDevtools initialIsOpen={false} />
-  </QueryClientProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  </RecoilRoot>
 );
