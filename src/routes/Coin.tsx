@@ -60,7 +60,6 @@ const Coin = () => {
 
   return (
     <Container>
-      <div>deploy test</div>
       <Header>
         <Helmet>
           <title>
@@ -103,7 +102,7 @@ const Coin = () => {
             </OverviewItem>
             <OverviewItem>
               <span>Price:</span>
-              <span>${priceData?.quotes.USD.price.toFixed(2)}</span>
+              <span>${priceData?.quotes?.USD?.price.toFixed(2)}</span>
             </OverviewItem>
           </Overview>
           <Description>{infoData?.description}</Description>
