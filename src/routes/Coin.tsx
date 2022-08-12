@@ -1,6 +1,6 @@
 import { useQuery, QueryCache, useQueries } from "@tanstack/react-query";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useLocation,
   useParams,
@@ -16,7 +16,12 @@ import { fetchInfoData, fetchPriceData } from "../api";
 
 import { iPriceData } from "../interfaces/Price";
 import { iInfoData } from "../interfaces/Coin";
-import { atom, useRecoilValue, useSetRecoilState } from "recoil";
+import {
+  atom,
+  useRecoilState,
+  useRecoilValue,
+  useSetRecoilState,
+} from "recoil";
 import { isDarkAtom } from "../atom";
 
 type RouteParams = {
@@ -30,7 +35,6 @@ type LocationState = {
 const Coin = () => {
   // ===== Recoil Dark Mode Setter =====
   const setDarkAtom = useSetRecoilState(isDarkAtom);
-  console.log(setDarkAtom);
 
   // get from URL
   const { coinId } = useParams<RouteParams>();
