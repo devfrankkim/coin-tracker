@@ -60,6 +60,7 @@ const Coin = () => {
 
   return (
     <Container>
+      <div>deploy test</div>
       <Header>
         <Helmet>
           <title>
