@@ -7,7 +7,7 @@ import Price from "./routes/Price";
 
 const Router = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/:coinId" element={<Coin />}>
           <Route path="price" element={<Price />} />
